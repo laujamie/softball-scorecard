@@ -1,0 +1,17 @@
+package pages
+
+import (
+	"fmt"
+	"github.com/laujamie/scoresheet/components/common"
+)
+
+templ Home(count uint64) {
+	@common.BaseLayout("Home") {
+		<div>
+			<p>Count: <span id="count">{ fmt.Sprintf("%d", count) }</span></p>
+			<button hx-post="/add" hx-target="#count" hx-swap="innerHTML">
+				Increment
+			</button>
+		</div>
+	}
+}

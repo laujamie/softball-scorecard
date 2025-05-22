@@ -1,0 +1,41 @@
+package createscorecard
+
+templ Form(values CreateScorecardFormValues, errors CreateScorecardFormErrors) {
+	<form hx-post="/scorecards/new" hx-target="this" hx-swap="outerHTML">
+		<label>
+			Home team
+			<input
+				name="home-team"
+				placeholder="Blue Jays"
+				autocomplete="off"
+				maxlength="30"
+				value={ values.HomeTeam }
+				if len(errors.HomeTeam) > 0 {
+					aria-invalid="true"
+					aria-describedby="errors-home-team"
+				}
+			/>
+			if len(errors.HomeTeam) > 0 {
+				<small id="errors-home-team">{ errors.HomeTeam }</small>
+			}
+		</label>
+		<label>
+			Away team
+			<input
+				name="away-team"
+				placeholder="Orioles"
+				autocomplete="off"
+				maxlength="30"
+				value={ values.AwayTeam }
+				if len(errors.AwayTeam) > 0 {
+					aria-invalid="true"
+					aria-describedby="errors-home-team"
+				}
+			/>
+			if len(errors.AwayTeam) > 0 {
+				<small id="errors-away-team">{ errors.AwayTeam }</small>
+			}
+		</label>
+		<button type="submit">Submit</button>
+	</form>
+}

@@ -1,0 +1,19 @@
+package createscorecard
+
+import "github.com/laujamie/scoresheet/components/common"
+
+type CreateScorecardFormValues struct {
+	HomeTeam string
+	AwayTeam string
+}
+
+type CreateScorecardFormErrors struct {
+	HomeTeam string
+	AwayTeam string
+}
+
+templ CreateScoreCard(values CreateScorecardFormValues, errors CreateScorecardFormErrors) {
+	@common.BaseLayout("Create Scorecard") {
+		@Form(values, errors)
+	}
+}
