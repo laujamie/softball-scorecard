@@ -4,10 +4,12 @@ go 1.23.0
 
 toolchain go1.23.8
 
-require github.com/labstack/echo/v4 v4.13.3
+require (
+	github.com/a-h/templ v0.3.857
+	github.com/labstack/echo/v4 v4.13.3
+)
 
 require (
-	github.com/a-h/templ v0.3.857 // indirect
 	github.com/labstack/gommon v0.4.2 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
