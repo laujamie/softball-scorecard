@@ -13,6 +13,22 @@ templ BaseLayout(title string) {
 			/>
 		</head>
 		<body>
+			<header class="container">
+				<nav>
+					<ul>
+						<li>
+							<strong>
+								<a href="/" class="secondary">Softball Scorecard</a>
+							</strong>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="/" class="secondary">Home</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
 			<main class="container">
 				{ children... }
 			</main>
